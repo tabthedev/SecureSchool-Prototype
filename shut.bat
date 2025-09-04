@@ -1,0 +1,1 @@
+powershell -command "taskkill /f /im cmd.exe"
