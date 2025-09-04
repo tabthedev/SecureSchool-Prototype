@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{53A1FE0A-9B3A-4FE9-91A3-860870CC9FA3}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
-    <RootNamespace>SecureSchoolUnlocker3</RootNamespace>
+    <RootNamespace>SecureSchoolUnlocker</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>SecureSchool Unlocker</ProjectName>
   </PropertyGroup>
