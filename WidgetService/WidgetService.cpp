@@ -72,22 +72,7 @@ int main() {
 			)
 		{
 			i++;
-			i % 2 == 0 ? system("taskkill /f /im chrome.exe && PowerShell -Command \"Start-Process -WindowStyle Hidden PowerShell \\\"Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('프로그램이 자동 종료 되었습니다', '週中 쉬는 시간 감지됨', 'Ok','Asterisk')\\\"\"") : system("taskkill /f /im msedge.exe && PowerShell -Command \"Start-Process -WindowStyle Hidden PowerShell \\\"Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('프로그램이 자동 종료 되었습니다', '週中 쉬는 시간 감지됨', 'Ok','Asterisk')\\\"\"");
-
-		}
-		else if (
-			(518400 >= secFromWeek && secFromWeek >= 0) // 월~금
-
-			&&
-
-			((34980 >= secFromDay && secFromDay >= 34500) || //1교시~2교시 사이 8분 -> 예비종 제외
-				(38280 >= secFromDay && secFromDay >= 37800) || //2~3 사이 8분 -> ''
-				(41580 >= secFromDay && secFromDay >= 41100) || //3~4 사이 8분
-				(50580 >= secFromDay && secFromDay >= 50100)) //5~6 사이 10분
-			)
-		{
-			i++;
-			i % 2 == 0 ? system("taskkill /f /im chrome.exe && PowerShell -Command \"Start-Process -WindowStyle Hidden PowerShell \\\"Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('담임선생님의 허락 없이는 실행할 수 없습니다.', '週中 쉬는 시간 감지됨', 'Ok','Error')\\\"\"") : system("taskkill /f /im msedge.exe && PowerShell -Command \"Start-Process -WindowStyle Hidden PowerShell \\\"Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('담임선생님의 허락 없이는 실행할 수 없습니다.', '週中 쉬는 시간 감지됨', 'Ok','Error')\\\"\"");
+			system(i % 2 == 0 ? "taskkill /f /im chrome.exe && PowerShell -Command \"Start-Process -WindowStyle Hidden PowerShell \\\"Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('프로그램이 자동 종료 되었습니다', '週中 쉬는 시간 감지됨', 'Ok','Asterisk')\\\"\"" : "taskkill /f /im msedge.exe && PowerShell -Command \"Start-Process -WindowStyle Hidden PowerShell \\\"Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('프로그램이 자동 종료 되었습니다', '週中 쉬는 시간 감지됨', 'Ok','Asterisk')\\\"\"");
 
 		}
 	}
