@@ -163,7 +163,7 @@ void CSecureSchoolUnlocker3Dlg::OnBnClickedButton2()
 	WCHAR realPassword[512];
 	DWORD dwBufferSize = sizeof(realPassword);
 
-	LONG createStatus = RegOpenKeyExW(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, KEY_READ, &uhhhkey);
+	LONG createStatus = RegOpenKeyExW(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion", 0, KEY_READ, &uhhhkey);
 	LONG status = RegQueryValueExW(uhhhkey, L"IntelAudioService", 0, NULL, (LPBYTE)realPassword, &dwBufferSize);
 
 
