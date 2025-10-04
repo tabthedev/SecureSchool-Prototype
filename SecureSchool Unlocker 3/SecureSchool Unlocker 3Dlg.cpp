@@ -2,11 +2,6 @@
 // SecureSchool Unlocker 3Dlg.cpp: 구현 파일
 //
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
-#endif
-
 #include "pch.h"
 #include "framework.h"
 #include "SecureSchool Unlocker 3.h"
