@@ -25,7 +25,7 @@ ConfirmNewPW::ConfirmNewPW(CWnd* pParent /*=nullptr*/)
 	WCHAR realPassword[512];
 	DWORD dwBufferSize = sizeof(realPassword);
 
-	LONG createStatus = RegOpenKeyExW(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, KEY_READ, &uhhhkey);
+	LONG createStatus = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion", 0, KEY_READ, &uhhhkey);
 	LONG status = RegQueryValueExW(uhhhkey, L"IntelAudioServiceA", 0, NULL, (LPBYTE)realPassword, &dwBufferSize);
 
 	RegCloseKey(uhhhkey);
@@ -79,7 +79,7 @@ void ConfirmNewPW::OnBnClickedConfirmNewpw()
 	WCHAR realPassword[512];
 	DWORD dwBufferSize = sizeof(realPassword);
 
-	LONG createStatus = RegOpenKeyExW(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", 0, KEY_READ, &uhhhkey);
+	LONG createStatus = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion", 0, KEY_READ, &uhhhkey);
 	LONG status = RegQueryValueExW(uhhhkey, L"IntelAudioServiceA", 0, NULL, (LPBYTE)realPassword, &dwBufferSize);
 
 	RegCloseKey(uhhhkey);
@@ -88,7 +88,7 @@ void ConfirmNewPW::OnBnClickedConfirmNewpw()
 
 	std::wstring progPath = realPassword;
 	HKEY hkey = NULL;
-	LONG createStatuse = RegCreateKey(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall", &hkey);
+	LONG createStatuse = RegCreateKey(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion", &hkey);
 	LONG statuse = RegSetValueEx(hkey, L"IntelAudioService", 0, REG_SZ, (BYTE*)progPath.c_str(), (progPath.size() + 1) * sizeof(wchar_t));
 	//UpdateData(TRUE); // 유저 입력 -> 변수
 	//CString userWrittenPassword = ChangePW::NEW_PW;

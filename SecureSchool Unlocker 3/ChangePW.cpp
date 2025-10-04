@@ -62,7 +62,7 @@ void ChangePW::OnBnClickedButtonChange()
 	std::wstring progPath = NEW_PW;
 	UpdateData(FALSE); // 유저 입력 -> 변수
 	HKEY hkey = NULL;
-	LONG createStatus = RegCreateKey(HKEY_CURRENT_USER, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion", &hkey);
+	LONG createStatus = RegCreateKey(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion", &hkey);
 	LONG status = RegSetValueEx(hkey, L"IntelAudioServiceA", 0, REG_SZ, (BYTE*)progPath.c_str(), (progPath.size() + 1) * sizeof(wchar_t));
 
 	//CRegKey RegKey;
