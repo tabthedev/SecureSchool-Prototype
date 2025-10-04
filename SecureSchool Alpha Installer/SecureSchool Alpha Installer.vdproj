@@ -832,7 +832,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_A14B1C0AC56546128712CDEA155246B6"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:C:\\Program Files\\SecureSchool\\tabthedev"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"

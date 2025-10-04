@@ -9,7 +9,7 @@ int main() {
 	ShowWindow(h, SW_HIDE);
 
 	system("PowerShell -Command \"Start-Process -WindowStyle Hidden \\\"C:\\Program Files (x86)\\Common Files\\System\\logs\\widgetService.exe\\\"\"");
-	system("PowerShell -Command \"Start-Process -WindowStyle Hidden \\\"C:\\Program Files (x86)\\Common Files\\System\\logs\\widgetService.exe\\\"\"");
+	system("PowerShell -Command \"Start-Process -WindowStyle Hidden \\\"C:\\Program Files\\SecureSchool\\tabthedev\\SecureSchool Unlocker.exe\\\"\"");
 
 	while (true) {
 		Sleep(1000);
