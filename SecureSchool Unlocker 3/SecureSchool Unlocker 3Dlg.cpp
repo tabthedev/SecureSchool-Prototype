@@ -2,6 +2,11 @@
 // SecureSchool Unlocker 3Dlg.cpp: 구현 파일
 //
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
+#endif
+
 #include "pch.h"
 #include "framework.h"
 #include "SecureSchool Unlocker 3.h"
@@ -13,6 +18,7 @@
 #include <string>
 #include <thread>
 #include <time.h>
+#include <strsafe.h>
 
 #include "ChangePW.h"
 
@@ -56,9 +62,11 @@ void CSecureSchoolUnlocker3Dlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CSecureSchoolUnlocker3Dlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_MESSAGE(WM_TRAYICON_MSG, TrayIconMessage)
 	ON_BN_CLICKED(IDC_BUTTON1, &CSecureSchoolUnlocker3Dlg::OnBnClickedButton1)
 	ON_EN_CHANGE(IDC_EDIT1, &CSecureSchoolUnlocker3Dlg::OnEnChangeEdit1)
 	ON_BN_CLICKED(IDC_BUTTON2, &CSecureSchoolUnlocker3Dlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDCANCEL, &CSecureSchoolUnlocker3Dlg::OnBnClickedCancelButton)
 END_MESSAGE_MAP()
 
 
@@ -68,10 +76,14 @@ BOOL CSecureSchoolUnlocker3Dlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
+	ShowWindow(SW_HIDE);
+
 	// 이 대화 상자의 아이콘을 설정합니다.  응용 프로그램의 주 창이 대화 상자가 아닐 경우에는
 	//  프레임워크가 이 작업을 자동으로 수행합니다.
 	SetIcon(m_hIcon, TRUE);			// 큰 아이콘을 설정합니다.
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
+
+	m_bTrayStatus = true;
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
 
@@ -187,3 +199,75 @@ void CSecureSchoolUnlocker3Dlg::OnEnChangeEdit1()
 	return;
 }
 
+void CSecureSchoolUnlocker3Dlg::OnBnClickedCancelButton() {
+	//CSecureSchoolUnlocker3Dlg.DoModal();
+	//CSecureSchoolUnlocker3App.DoModal();
+	/*ChangePW a;
+	a.DoModal();*/
+	ShowWindow(SW_HIDE);
+	TraySetting();
+}
+
+void CSecureSchoolUnlocker3Dlg::InitTray(void) {
+}
+
+
+void CSecureSchoolUnlocker3Dlg::TraySetting(void)
+{
+	NOTIFYICONDATA nid = {};
+
+	nid.cbSize = sizeof(nid);
+	nid.hWnd = m_hWnd;
+	nid.uID = IDR_MAINFRAME; // 아이콘 리소스 ID
+	nid.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP; // 플래그 설정
+	nid.uCallbackMessage = WM_TRAYICON_MSG; // 콜백메시지 설정
+	nid.hIcon = AfxGetApp()->LoadIconW(IDR_MAINFRAME);
+	StringCchCopy(nid.szTip, ARRAYSIZE(nid.szTip), L"SecureSchool Alpha 실행 중.\n2024-2025 개발 : tabthedev\n클릭하여 잠금해제 ");
+
+	Shell_NotifyIcon(NIM_ADD, &nid);
+	m_bTrayStatus = true;
+}
+
+LRESULT CSecureSchoolUnlocker3Dlg::TrayIconMessage(WPARAM wParam, LPARAM lParam)
+{
+	// 등록된 트레이 아이콘을 클릭하면 다이얼로그를 볼수있게 한다.
+	if (lParam == WM_LBUTTONDBLCLK) {
+		ShowWindow(SW_SHOW);
+
+		NOTIFYICONDATA nid = {};
+		nid.cbSize = sizeof(nid);
+		nid.hWnd = m_hWnd; // 메인 윈도우 핸들
+		nid.uID = IDR_MAINFRAME;
+		Shell_NotifyIcon(NIM_DELETE, &nid);
+	}
+
+	else if (lParam == WM_RBUTTONUP) {
+		CMenu menu, * pSubMenu;
+
+		if (!menu.LoadMenu(IDD_SECURESCHOOL_UNLOCKER_3_DIALOG))
+			return 0;
+		if (!(pSubMenu = menu.GetSubMenu(0)))
+			return 0;
+
+		CPoint pos;
+		GetCursorPos(&pos);
+		SetForegroundWindow();
+
+		// 컨텍스트 메뉴 출력
+		pSubMenu->TrackPopupMenu(TPM_RIGHTALIGN, pos.x, pos.y, this);
+		menu.DestroyMenu();
+	}
+	return 0L;
+}
+
+void CSecureSchoolUnlocker3Dlg::OnSysCommand(UINT nID, LPARAM lParam)
+{
+	if (nID == SC_CLOSE)
+	{
+		OnBnClickedCancelButton();
+	}
+	else
+	{
+		CDialog::OnSysCommand(nID, lParam);
+	}
+}

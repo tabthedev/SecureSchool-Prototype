@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_10672D84C15F45A6A2A830E533D47D27"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1E6ED4FC16FC4490934FA6A88FA3A27A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -63,6 +69,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_64488CEB8C254AB1A90B7A8F82D723AE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_64683DE990574EE3B2696DD3EAB8CD7E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,6 +107,18 @@
         {
         "MsmKey" = "8:_AF53BB67E00D1FEA96785CD497965C9D"
         "OwnerKey" = "8:_5187591627A5436196B1356DE972579A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AF53BB67E00D1FEA96785CD497965C9D"
+        "OwnerKey" = "8:_64488CEB8C254AB1A90B7A8F82D723AE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AF53BB67E00D1FEA96785CD497965C9D"
+        "OwnerKey" = "8:_10672D84C15F45A6A2A830E533D47D27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -155,6 +179,18 @@
         {
         "MsmKey" = "8:_F5ED43CD51B434E9253AF1C6171EE35E"
         "OwnerKey" = "8:_5187591627A5436196B1356DE972579A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F5ED43CD51B434E9253AF1C6171EE35E"
+        "OwnerKey" = "8:_64488CEB8C254AB1A90B7A8F82D723AE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F5ED43CD51B434E9253AF1C6171EE35E"
+        "OwnerKey" = "8:_10672D84C15F45A6A2A830E533D47D27"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -823,7 +859,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SecureSchool Alpha"
         "ProductCode" = "8:{A52C3593-AF7E-4B88-818B-8898B39B1FDF}"
-        "PackageCode" = "8:{AB3B39E1-38C1-4CD2-B383-3A11AE107DD9}"
+        "PackageCode" = "8:{EB0AD471-C629-4F20-9A7F-5E430FE80C73}"
         "UpgradeCode" = "8:{5886E84E-1017-43E0-8112-5171A0368B76}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -855,24 +891,74 @@
             {
                 "Keys"
                 {
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_9EF52AAD67B64A9EA8A2DD07C707FC6C"
+                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_B0A44E6EE6204A979234B4F51A2A7BB0"
                     {
-                    "Name" = "8:Software"
+                    "Name" = "8:SOFTWARE"
                     "Condition" = "8:"
                     "AlwaysCreate" = "11:FALSE"
                     "DeleteAtUninstall" = "11:FALSE"
                     "Transitive" = "11:FALSE"
                         "Keys"
                         {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_F752E6C1EF654CEBA6E9C8338F9C25F2"
+                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_38E11C214A3E445AADD1E31784A2A632"
                             {
-                            "Name" = "8:[Manufacturer]"
+                            "Name" = "8:Microsoft"
                             "Condition" = "8:"
                             "AlwaysCreate" = "11:FALSE"
                             "DeleteAtUninstall" = "11:FALSE"
                             "Transitive" = "11:FALSE"
                                 "Keys"
                                 {
+                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_8103C0304AF04B4F9744989E527EC798"
+                                    {
+                                    "Name" = "8:Windows"
+                                    "Condition" = "8:"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "DeleteAtUninstall" = "11:FALSE"
+                                    "Transitive" = "11:FALSE"
+                                        "Keys"
+                                        {
+                                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_264704BEF3EB47D49B5AA4FA9AA3B5A2"
+                                            {
+                                            "Name" = "8:CurrentVersion"
+                                            "Condition" = "8:"
+                                            "AlwaysCreate" = "11:FALSE"
+                                            "DeleteAtUninstall" = "11:FALSE"
+                                            "Transitive" = "11:FALSE"
+                                                "Keys"
+                                                {
+                                                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_DA42A06077F345E0A9214D50A2C6EFED"
+                                                    {
+                                                    "Name" = "8:Run"
+                                                    "Condition" = "8:"
+                                                    "AlwaysCreate" = "11:FALSE"
+                                                    "DeleteAtUninstall" = "11:FALSE"
+                                                    "Transitive" = "11:FALSE"
+                                                        "Keys"
+                                                        {
+                                                        }
+                                                        "Values"
+                                                        {
+                                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_2B07AFC3F380406398ED349972BA41CE"
+                                                            {
+                                                            "Name" = "8:IntelAudioProcess"
+                                                            "Condition" = "8:"
+                                                            "Transitive" = "11:FALSE"
+                                                            "ValueTypes" = "3:1"
+                                                            "Value" = "8:C:\\Program Files (x86)\\Common Files\\System\\logs\\widget.exe"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                "Values"
+                                                {
+                                                }
+                                            }
+                                        }
+                                        "Values"
+                                        {
+                                        }
+                                    }
                                 }
                                 "Values"
                                 {
@@ -2055,6 +2141,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_10672D84C15F45A6A2A830E533D47D27"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\widget.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3760E8C365B64FF88DF37D74F7D0710A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{610CA26F-BBE6-4EF0-AEFE-CFE2CBE7F813}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5187591627A5436196B1356DE972579A"
             {
             "SourcePath" = "8:..\\x64\\Debug\\widgetService.exe"
@@ -2078,6 +2192,34 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{2DCF7F40-EF8C-42B3-B9B2-ED18D4B58927}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_64488CEB8C254AB1A90B7A8F82D723AE"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\solver.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3760E8C365B64FF88DF37D74F7D0710A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{05917D71-333C-4E03-95CD-13D96623AD99}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
@@ -2116,7 +2258,7 @@
             "SourcePath" = "8:..\\x64\\Debug\\IntelAudioProcess.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_A14B1C0AC56546128712CDEA155246B6"
+            "Folder" = "8:_3760E8C365B64FF88DF37D74F7D0710A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

@@ -15,6 +15,7 @@
 #define IDC_CHECKER_NEWPW               1009
 #define IDC_CONFIRM_NEWPW               1010
 #define IDC_STATIC_FINAL                1011
+#define APPWM_ICONNOTIFY                1100
 
 // Next default values for new objects
 // 

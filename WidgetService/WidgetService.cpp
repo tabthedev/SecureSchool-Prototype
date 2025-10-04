@@ -21,29 +21,10 @@ std::wstring s2ws(const std::string& s)
 
 HWND h = GetConsoleWindow();
 
-void SystemTray() {
-	NOTIFYICONDATAW nid = {};
-
-	nid.cbSize = sizeof(nid);
-	nid.hWnd = h;
-	nid.uFlags = NIF_ICON | NIF_TIP;
-	nid.hIcon = (HICON)LoadImageW(NULL, s2ws("C:\\Program Files (x86)\\Common Files\\System\\image\\icon1.ico").c_str(), IMAGE_ICON, 0, 0, LR_LOADFROMFILE | LR_SHARED);
-	StringCchCopy(nid.szTip, ARRAYSIZE(nid.szTip), L"SecureSchool Alpha 실행 중.\n2024-2025 개발 : tabthedev");
-
-	Shell_NotifyIcon(NIM_ADD, &nid);
-
-	int r = _getch();
-
-	Shell_NotifyIcon(NIM_DELETE, &nid);
-}
-
 
 
 int main() {
 	ShowWindow(h, SW_HIDE);
-
-	std::thread a(SystemTray);
-	a.detach();
 
 	int i = 0;
 

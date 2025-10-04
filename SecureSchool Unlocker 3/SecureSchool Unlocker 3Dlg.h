@@ -1,5 +1,6 @@
 ﻿
 #pragma once
+#define WM_TRAYICON_MSG WM_USER + 1
 
 
 // CSecureSchoolUnlocker3Dlg 대화 상자
@@ -23,8 +24,13 @@ protected:
 protected:
 	HICON m_hIcon;
 
+	LRESULT TrayIconMessage(WPARAM wParam, LPARAM lParam);
+
+	bool m_bTrayStatus;
+
 	// 생성된 메시지 맵 함수
 	virtual BOOL OnInitDialog();
+	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
@@ -35,4 +41,7 @@ public:
 	afx_msg void OnBnClickedButton1();
 	afx_msg void OnEnChangeEdit1();
 	afx_msg void OnBnClickedButton2();
+	afx_msg void OnBnClickedCancelButton();
+	void TraySetting(void);
+	void InitTray(void);
 };
